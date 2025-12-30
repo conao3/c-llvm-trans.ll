@@ -1,65 +1,45 @@
+#+title: c-llvm-trans.ll
 #+author: conao3
-#+date: <2018-10-25 Thu>
 
 [[https://github.com/conao3/c-llvm-trans.ll][https://raw.githubusercontent.com/conao3/files/master/blob/headers/png/c-llvm-trans.ll.png]]
 [[https://github.com/conao3/c-llvm-trans.ll/blob/master/LICENSE][https://img.shields.io/github/license/conao3/c-llvm-trans.ll.svg?style=flat-square]]
 [[https://github.com/conao3/c-llvm-trans.ll/releases][https://img.shields.io/github/tag/conao3/c-llvm-trans.ll.svg?style=flat-square]]
-[[https://travis-ci.org/conao3/c-llvm-trans.ll][https://img.shields.io/travis/conao3/c-llvm-trans.ll/master.svg?style=flat-square]]
-[[https://app.codacy.com/project/conao3/c-llvm-trans.ll/dashboard][https://img.shields.io/codacy/grade/83d9a0638d4d4343838687b31953345d.svg?logo=codacy&style=flat-square]]
 [[https://www.patreon.com/conao3][https://img.shields.io/badge/patreon-become%20a%20patron-orange.svg?logo=patreon&style=flat-square]]
 [[https://twitter.com/conao_3][https://img.shields.io/badge/twitter-@conao__3-blue.svg?logo=twitter&style=flat-square]]
-[[https://join.slack.com/t/conao3-support/shared_invite/enQtNjUzMDMxODcyMjE1LTA4ZGRmOWYwZWE3NmE5NTkyZjk3M2JhYzU2ZmRkMzdiMDdlYTQ0ODMyM2ExOGY0OTkzMzZiMTNmZjJjY2I5NTM][https://img.shields.io/badge/chat-on_slack-blue.svg?logo=slack&style=flat-square]]
+[[https://conao3-support.slack.com/join/shared_invite/zt-32da65wtx-MwzsDg8czOrO0wBuHo_tdQ][https://img.shields.io/badge/chat-on_slack-blue.svg?logo=slack&style=flat-square]]
 
-* Table of Contents
-- [[#Description][Description]]
-- [[#install][Install]]
-- [[#usage][Usage]]
-- [[#information][Information]]
-  - [[#donation][Donation]]
-  - [[#community][Community]]
-  - [[#contribute][Contribute]]
-  - [[#license][License]]
-  - [[#author][Author]]
-  - [[#contributors][Contributors]]
+* Overview
 
-* Description
-The best leaning LLVM, read .ll code translated from C by Clang.
+A practical collection of LLVM IR (.ll) files generated from C source code using Clang, designed to help developers learn and understand LLVM Intermediate Representation.
 
-This Theory is pointed out by those blogs ([[http://www.wilfred.me.uk/blog/2015/02/21/my-first-llvm-compiler/][My First LLVM Compiler]],
-[[https://itchyny.hatenablog.com/entry/2017/02/27/100000][LLVMを始めよう！ 〜 LLVM IRの基礎はclangが教えてくれた・Brainf**kコンパイラを作ってみよう 〜]])
+The approach of learning LLVM by reading compiler-generated IR is inspired by several excellent resources:
+- [[http://www.wilfred.me.uk/blog/2015/02/21/my-first-llvm-compiler/][My First LLVM Compiler]]
+- [[https://itchyny.hatenablog.com/entry/2017/02/27/100000][LLVMを始めよう！ 〜 LLVM IRの基礎はclangが教えてくれた・Brainf**kコンパイラを作ってみよう 〜]]
 
-* Install
-This repository's porpose is only read .ll file.
-So just read it please!
+* Getting Started
 
-* Usage
+This repository is intended as a learning resource. Simply browse and read the =.ll= files to explore how C code translates to LLVM IR.
 
-* Information
-** Donation
-I love OSS and I am dreaming of working on it as *full-time* job.
+To generate your own =.ll= files from C source:
 
-*With your support*, I will be able to spend more time at OSS!
+#+begin_src shell
+clang -S -emit-llvm -O0 your_file.c -o your_file.ll
+#+end_src
 
-[[https://www.patreon.com/conao3][https://c5.patreon.com/external/logo/become_a_patron_button.png]]
+* License
 
-** Community
-All feedback and suggestions are welcome!
-
-You can use github issues, but you can also use [[https://join.slack.com/t/conao3-support/shared_invite/enQtNjUzMDMxODcyMjE1LTA4ZGRmOWYwZWE3NmE5NTkyZjk3M2JhYzU2ZmRkMzdiMDdlYTQ0ODMyM2ExOGY0OTkzMzZiMTNmZjJjY2I5NTM][Slack]]
-if you want a more casual conversation.
-
-** Contribution
-Feel free to send PR!
-
-** License
 #+begin_example
-  The MIT License (MIT)
-  Copyright (c) Naoya Yamashita - https://conao3.com
-  https://github.com/conao3/c-llvm-trans.ll/blob/master/LICENSE
+The MIT License (MIT)
+Copyright (c) Naoya Yamashita - https://conao3.com
+https://github.com/conao3/c-llvm-trans.ll/blob/master/LICENSE
 #+end_example
 
-** Author
-- Naoya Yamashita ([[https://github.com/conao3][conao3]])
+* Community and Support
 
-** Contributors
-- Not yet... Now send PR and add your name!!
+Feedback and questions are always welcome. Feel free to open an issue on GitHub or join the [[https://conao3-support.slack.com/join/shared_invite/zt-32da65wtx-MwzsDg8czOrO0wBuHo_tdQ][Slack community]] for discussion.
+
+If you find this project helpful, consider supporting development on [[https://www.patreon.com/conao3][Patreon]].
+
+* Author
+
+Naoya Yamashita ([[https://github.com/conao3][conao3]])
